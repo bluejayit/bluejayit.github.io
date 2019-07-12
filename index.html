@@ -4,96 +4,173 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <title>BlueJay IT – Under Construction</title>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <style>
-            body {
-                background-color: gainsboro;
-                font-family: 'Arial';
+            @font-face {
+                font-family: 'Fighting Spirit TBS';
+                src: URL('fonts/fighting spirit TBS.ttf') format('truetype');
             }
-            .ct {text-align: center;}
+            body {
+                background-color: rgba(27, 160, 244, 0.25);
+                font-family: 'PT Sans', sans-serif;
+            }
+            .ta-center {text-align: center;}
+            #name {color: rgb(27, 160, 244);}
             .center {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
-              width: 50%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 35%;
+            }
+            #doge {
+                width: 210px;
+                border: 5px solid lime;
+                border-radius: 10px;
+                display: none;
             }
             #countdown {
-                font-size: 2rem;
-                color: red;
+                font-size: 1.5rem;
+                color: blue;
             }
             #services {
-              display: block;
-              margin: 0 auto;
-              margin-bottom: 7px;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 7px;
+                border-radius: 10px;
+                background-color: rgb(27, 160, 244);
             }
             .buttonclicked {border: 5px solid rgba(0,0,0,0.6)}
-            #services-container {text-align: center;}
-            ul{
-              text-align: left;
-              display: inline-block;
-              margin: 0  auto;
+            #services-container {display: none;}
+            ul {
+                text-align: left;
+                display: inline-block;
+                margin: 0  auto;
             }
+            #micon {color: rgb(27, 160, 244);}
+            #micon:hover {color: #003399;}
+            /* FOOTER */
+            html, body {height: 100%;}
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .content {flex: 1 0 auto;}
+            .footer {
+                flex-shrink: 0; 
+                /* MORE SPACE */
+                padding-bottom: 15px;
+            }
+            /* END FOOTER */
+            #sponsors ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              display: inline-flex
+            }
+            #poweredby {
+                font-family: 'Fighting Spirit TBS';
+                color: yellow;
+                text-shadow: 2px 1px #ff0000;
+                text-decoration: underline;
+            }
+            .sponsor:hover {filter: grayscale(100%);}
+            li:not(:last-child) {margin-right: 15px;}
+
+            @keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
         </style>
     </head>
     <body>
-        <h1 class="ct">Welcome to <span style="color: rgb(27, 160, 244);">BlueJay IT</span></h1>
-        <img class="center" src="img/under-construction.png">
-        <h3 class="ct">Our web site is currently under construction. Please check back later.</h3>
-        <h2 class="ct">Countdown to completion</h2>
-        <p class="ct" id="countdown"><img src="img/loading.gif" width="28"></p>
-        <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("Aug 15, 2019 12:00:00").getTime();
+        <div class="content">
+            <h1 class="ta-center">Welcome to <span id="name">BlueJay IT</span></h1>
+            <img id="mememe" onclick="mememe()" class="center" src="img/under-construction.png">
+            <img id="doge" onclick="mememe()" class="center" src="https://tr4.cbsistatic.com/hub/i/2014/05/15/f8964afd-bd82-4e0e-bcbe-e927363dcdc1/codedoge.jpg" width="10">
+            <script>
+                function mememe() {
+                    var trigger = document.getElementById("mememe");
+                    var meme = document.getElementById("doge");
 
-            // Update the count down every 1 second
-            var x = setInterval(function() {
+                    if (meme.style.display === "block") {
+                        meme.style.display = "none";
+                        trigger.style.display = "block";
+                    } else {
+                        trigger.style.display = "none";
+                        meme.style.display = "block";
+                    }
+                }
+            </script>
+            <h3 class="ta-center">Our web site is currently under construction. Please check back later.</h3>
+            <h2 class="ta-center">Countdown to completion</h2>
+            <p class="ta-center" id="countdown"><img src="img/loading.gif" width="22"></p>
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Aug 15, 2019 12:00:00").getTime();
 
-            // Get today's date and time
-            var now = new Date().getTime();
+                // Update the count down every 1 second
+                var x = setInterval(function() {
 
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
+                // Get today's date and time
+                var now = new Date().getTime();
 
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
 
-            // Display the result in the element with id="demo"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // If the count down is finished, write some text 
-            if (distance < 0) {
-              clearInterval(x);
-              document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
-          }, 1000);
-        </script>
-        <button id="services" onclick="hsServices()"><h2>Our Offerings</h2></button>
-        <div id="services-container" style="display: none;">
-          <ul>
-            <li>Managed Domain Services</li>
-            <li>Web site design</li>
-            <li>Computer Programming</li>
-            <li>Technical Support</li>
-            <li>Network Administration</li>
-          </ul>
+                // Display the result in the element with id="demo"
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+              }, 1000);
+            </script>
+            <button id="services" onclick="hsServices()"><h2>Our Offerings</h2></button>
+            <div id="services-container" class="ta-center">
+                <ul type="square">
+                    <li>Managed Domain Services</li>
+                    <li>Web site design</li>
+                    <li>Computer Programming</li>
+                    <li>Technical Support</li>
+                    <li>Network Administration</li>
+                </ul>
+            </div>
+            <script>
+              function hsServices() {
+                var x = document.getElementById("services-container");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    services.classList.add("buttonclicked");
+                } else {
+                    x.style.display = "none";
+                    services.classList.remove("buttonclicked");
+                    }
+                }
+            </script>
+            <div class="ta-center">
+                <a id="micon" href="mailto:info@bluejayit.com">
+                    <i class="fa fa-envelope fa-2x"></i>
+                </a>
+            </div>
         </div>
-        <script>
-          function hsServices() {
-            button = document.getElementById("services");
-            var x = document.getElementById("services-container");
-            if (x.style.display === "none") {
-              x.style.display = "block";
-              services.classList.add("buttonclicked");
-            } else {
-              x.style.display = "none";
-              services.classList.remove("buttonclicked");
-            }
-          }
-        </script>
-        <h2 class="ct">Contact Us</h2>
-        <h3 class="ct"><a href="mailto:info@bluejayit.com">info@bluejayit.com</a></h3>
+        <div class="footer">
+            <div id="sponsors" class="ta-center">
+                <p id="poweredby">Powered By</p>
+                <ul>
+                    <li class="sponsor"><a href="https://github.com/" target="_blank"><img src="img/GitHub_Logo.png" width="60"></a></li>
+                    <li class="sponsor"><a href="https://www.cloudflare.com/" target="_blank"><img src="https://www.cloudflare.com/media/images/web-badges/cf-web-badges-a-gray-on.png" width="110"></a></li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
