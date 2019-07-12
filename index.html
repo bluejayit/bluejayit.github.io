@@ -9,7 +9,7 @@
                 background-color: gainsboro;
                 font-family: 'Arial';
             }
-            * {text-align: center;}
+            .ct {text-align: center;}
             .center {
               display: block;
               margin-left: auto;
@@ -20,13 +20,26 @@
                 font-size: 2rem;
                 color: red;
             }
+            #services {
+              display: block;
+              margin: 0 auto;
+              margin-bottom: 7px;
+            }
+            .buttonclicked {border: 5px solid rgba(0,0,0,0.6)}
+            #services-container {text-align: center;}
+            ul{
+              text-align: left;
+              display: inline-block;
+              margin: 0  auto;
+            }
         </style>
     </head>
     <body>
-        <h1>Welcome to BlueJay IT</h1>
+        <h1 class="ct">Welcome to <span style="color: rgb(27, 160, 244);">BlueJay IT</span></h1>
         <img class="center" src="img/under-construction.png">
-        <h3>Our web site is currently under construction. Please check back later.</h3>
-        <p id="countdown"><img src="img/loading.gif" width="50"></p>
+        <h3 class="ct">Our web site is currently under construction. Please check back later.</h3>
+        <h2 class="ct">Countdown to completion</h2>
+        <p class="ct" id="countdown"><img src="img/loading.gif" width="28"></p>
         <script>
             // Set the date we're counting down to
             var countDownDate = new Date("Aug 15, 2019 12:00:00").getTime();
@@ -40,24 +53,47 @@
             // Find the distance between now and the count down date
             var distance = countDownDate - now;
 
-              // Time calculations for days, hours, minutes and seconds
-              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-              // Display the result in the element with id="demo"
-              document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-              + minutes + "m " + seconds + "s ";
+            // Display the result in the element with id="demo"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
 
-              // If the count down is finished, write some text 
-              if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-              }
-            }, 1000);
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+          }, 1000);
         </script>
-        <h2>Contact Us</h2>
-        <h3><a href="mailto:info@bluejayit.com">info@bluejayit.com</a></h3>
+        <button id="services" onclick="hsServices()"><h2>Our Offerings</h2></button>
+        <div id="services-container" style="display: none;">
+          <ul>
+            <li>Managed Domain Services</li>
+            <li>Web site design</li>
+            <li>Computer Programming</li>
+            <li>Technical Support</li>
+            <li>Network Administration</li>
+          </ul>
+        </div>
+        <script>
+          function hsServices() {
+            button = document.getElementById("services");
+            var x = document.getElementById("services-container");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+              services.classList.add("buttonclicked");
+            } else {
+              x.style.display = "none";
+              services.classList.remove("buttonclicked");
+            }
+          }
+        </script>
+        <h2 class="ct">Contact Us</h2>
+        <h3 class="ct"><a href="mailto:info@bluejayit.com">info@bluejayit.com</a></h3>
     </body>
 </html>
