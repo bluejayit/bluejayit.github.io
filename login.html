@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Light theme styles */
+        body {
+            background-color: #f0f8ff; /* Light blue-gray background */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .card {
+            background-color: #ffffff; /* White card background */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-primary {
+            background-color: #0066cc; /* Blue button */
+            border-color: #0066cc;
+        }
+        .btn-primary:hover {
+            background-color: #005bb5; /* Darker blue on hover */
+            border-color: #005bb5;
+        }
+
+        /* Dark theme styles */
+        body.dark-theme {
+            background-color: #343a40; /* Dark background */
+            color: #f8f9fa; /* Light text color */
+        }
+        .card.dark-theme {
+            background-color: #495057; /* Dark card background */
+            color: #f8f9fa; /* Light text color */
+        }
+        .btn-primary.dark-theme {
+            background-color: #007bff; /* Lighter blue for dark theme */
+            border-color: #007bff;
+        }
+        .btn-primary.dark-theme:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .form-label {
+            color: #333; /* Dark text for labels */
+        }
+
+        /* For the dark theme label */
+        .form-label.dark-theme {
+            color: #f8f9fa;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .toggle-btn:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Theme toggle button -->
+<button class="toggle-btn" id="themeToggle">Switch to Dark Theme</button>
+
+<!-- Login Form -->
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="row w-100">
+        <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Admin Login</h2>
+                    <form action="/admin-dashboard" method="POST">
+                        <!-- Username Input -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+                        </div>
+                        <!-- Password Input -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                        </div>
+                        <!-- Remember Me Checkbox -->
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <!-- Login Button -->
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<script>
+    // Get elements
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const card = document.querySelector('.card');
+    const formLabels = document.querySelectorAll('.form-label');
+    const btnPrimary = document.querySelector('.btn-primary');
+
+    // Check system's theme preference on load
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Function to apply the theme based on system preference
+    function applyTheme(isDark) {
+        if (isDark) {
+            body.classList.add('dark-theme');
+            card.classList.add('dark-theme');
+            btnPrimary.classList.add('dark-theme');
+            formLabels.forEach(label => label.classList.add('dark-theme'));
+            themeToggle.textContent = 'Switch to Light Theme';
+        } else {
+            body.classList.remove('dark-theme');
+            card.classList.remove('dark-theme');
+            btnPrimary.classList.remove('dark-theme');
+            formLabels.forEach(label => label.classList.remove('dark-theme'));
+            themeToggle.textContent = 'Switch to Dark Theme';
+        }
+    }
+
+    // Apply theme on page load based on system preference
+    applyTheme(mediaQuery.matches);
+
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+        // Toggle the theme
+        const isDark = body.classList.contains('dark-theme');
+        applyTheme(!isDark);
+    });
+
+    // Listen for changes in system theme preference
+    mediaQuery.addEventListener('change', (e) => {
+        applyTheme(e.matches); // Update theme when system preference changes
+    });
+</script>
+
+</body>
+</html>
