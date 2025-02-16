@@ -1,132 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-        <meta name="description" content="BlueJay IT – We've got IT! Serving central Minnesota since 2017.">
-                      
-        <title>BlueJay IT LLC</title>
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <style>
-            @font-face {
-                font-family: 'Fighting Spirit TBS';
-                src: URL('fonts/fighting spirit TBS.ttf') format('truetype');
-            }
-            body {
-                background-color: rgba(27, 160, 244, 0.25);
-                font-family: 'PT Sans', sans-serif;
-            }
-            .ta-center {text-align: center;}
-            #name {color: rgb(27, 160, 244);}
-            .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 35%;
-            }
-            #doge {
-                width: 210px;
-                border: 5px solid lime;
-                border-radius: 10px;
-                display: none;
-            }
-            #countdown {
-                font-size: 1.5rem;
-                color: blue;
-            }
-            #services {
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 7px;
-                border-radius: 10px;
-                background-color: rgb(27, 160, 244);
-            }
-            .buttonclicked {border: 5px solid rgba(0,0,0,0.6)}
-            ul {
-                text-align: left;
-                display: inline-block;
-                margin: 0  auto;
-            }
-            #micon {color: rgb(27, 160, 244);}
-            #micon:hover {color: #003399;}
-            /* FOOTER */
-            html, body {height: 100%;}
-            body {
-                display: flex;
-                flex-direction: column;
-            }
-            .content {flex: 1 0 auto;}
-            .footer {
-                flex-shrink: 0; 
-                /* MORE SPACE */
-                padding-bottom: 15px;
-            }
-            /* END FOOTER */
-            #sponsors ul {
-              list-style: none;
-              margin: 0;
-              padding: 0;
-              display: inline-flex
-            }
-            #poweredby {
-                font-family: 'Fighting Spirit TBS';
-                color: yellow;
-                text-shadow: 2px 1px #ff0000;
-                text-decoration: underline;
-            }
-            .sponsor:hover {filter: grayscale(100%);}
-            li:not(:last-child) {margin-right: 15px;}
-            @keyframes fadeout {
-    from { opacity: 1; }
-    to   { opacity: 0; }
-}
-#ci {
-    color: red;
-}
-        </style>
-    </head>
-    <body>
-        <div class="content">
-            <h1 class="ta-center">Welcome to <span id="name">BlueJay IT</span></h1>
-            <button id="services" onclick="hsServices()"><h2>Services</h2></button>
-            <div id="services-container" class="ta-center">
-                <ul type="square">
-                    <li>VOIP Integrations</li>
-                    <li>URL Shorteners</li>
-                    <li>Globalization</li>
-                    <li>Managed Domain Services</li>
-                    <li>Web site design</li>
-                    <li>Technical Support</li>
-                    <li>Network Administration</li>
-                </ul>
-            </div>
-            <div class="ta-center">
-                <a id="micon" href="mailto:info@bluejayit.com">
-                    <i class="fa fa-envelope fa-2x"></i>
-                </a>
-            </div>
-            <!-- <div class="ta-center">
-                <h2>Give us a call!: (320) 316-2626</h2>
-            </div> -->
-           <p>HI GIDEON!!!!!!>
-            <div class="ta-center">
-            <h3 id="ci">Our Clients</h3>
-            <ul>
-                <li>Rhonda Rose</li>
-                <li>AJP</li>
-                <li>Campingfoxx Gaming</li>
-            </ul>
-            </div>
-        </div>
-        <div class="footer">
-            <div id="sponsors" class="ta-center">
-                <p id="poweredby">Powered By</p>
-                <ul>
-                    <li class="sponsor"><a href="https://github.com/" target="_blank"><img src="img/GitHub_Logo.png" width="60"></a></li>
-                    <li class="sponsor"><a href="https://www.cloudflare.com/" target="_blank"><img src="https://www.cloudflare.com/media/images/web-badges/cf-web-badges-a-gray-on.png" width="110"></a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT Consulting & Tech Support</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons (Required for Social Media Icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,50,0.7), rgba(0,0,50,0.7)), url('https://source.unsplash.com/1600x900/?technology,computer') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Service Box Styling */
+        .service-box {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">IT Solutions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
-    </body>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Trusted IT Experts</h1>
+            <p>We provide fast, reliable, and affordable tech solutions for individuals and businesses.</p>
+            <a href="#services" class="btn btn-light btn-lg btn-cta">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Tech Support & Troubleshooting</h4>
+                        <p>We diagnose and fix hardware and software issues quickly.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Device Setup & Installation</h4>
+                        <p>Helping you set up new devices for seamless use.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Cybersecurity Solutions</h4>
+                        <p>Protect your devices and data from online threats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq text-center py-5 bg-light">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What services do you offer?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">We offer tech support, device setup, cybersecurity, and more.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials text-center">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p>"Great service! Fixed my laptop in no time!" - John D.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p>"Super helpful! My network is now faster than ever!" - Sarah L.</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 text-center">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" class="form-control mb-3" placeholder="Your Name">
+                <input type="email" class="form-control mb-3" placeholder="Your Email">
+                <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn-primary btn-cta">Send</button>
+            </form>
+        </div>
+    </section>
+
+        <!-- Footer Section -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p>Email: support@itconsulting.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                        <p>Location: 123 Tech Street, City, State</p>
+                    </div>
+    
+                    <!-- Quick Links -->
+                    <div class="col-md-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                            <li><a href="#faq" class="text-white text-decoration-none">FAQ</a></li>
+                            <li><a href="#testimonials" class="text-white text-decoration-none">Testimonials</a></li>
+                            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Social Media -->
+                    <div class="col-md-4">
+                        <h5>Follow Us</h5>
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i> Facebook</a><br>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i> Twitter</a><br>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i> LinkedIn</a><br>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-center mb-0">&copy; 2025 IT Consulting. All rights reserved.</p>
+            </div>
+        </footer>
+    
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
