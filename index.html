@@ -80,49 +80,152 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Your Trusted IT Experts</h1>
-            <p>We provide fast, reliable, and affordable tech solutions for individuals and businesses.</p>
+            <h1>We make IT work!</h1>
+            <p>We provide fast, reliable, and affordable tech solutions for individuals and businesses, making your IT needs work for you, not against you. Let's get in touch and see how we can ease the burden of your IT needs!</p>
             <a href="#services" class="btn btn-light btn-lg btn-cta">Explore Services</a>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white py-4">
+    <!-- Services Section -->
+    <section id="services" class="py-5 text-center">
         <div class="container">
-            <div class="row">
-                <!-- Contact Info -->
+            <h2 class="mb-4">Our Services</h2>
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p>Email: info@bluejayit.com</p>
-                    <p>Phone: (701) 969-7222</p>
-                    <p>Location: Fargo-Moorhead</p>
+                    <div class="service-box">
+                        <h4>Tech Support & Troubleshooting</h4>
+                        <p>We diagnose and fix hardware and software issues quickly.</p>
+                    </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
-                        <li><a href="#faq" class="text-white text-decoration-none">FAQ</a></li>
-                        <li><a href="#testimonials" class="text-white text-decoration-none">Testimonials</a></li>
-                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
-                        <li><a href="login.html" class="text-white text-decoration-none">Admin Login</a></li>
-                    </ul>
+                    <div class="service-box">
+                        <h4>Web Design & Development</h4>
+                        <p>Business and personal websites, delivered with speed and quality.</p>
+                    </div>
                 </div>
-
-                <!-- Social Media -->
                 <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i> Facebook</a><br>
-                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i> Twitter</a><br>
-                    <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i> LinkedIn</a><br>
+                    <div class="service-box">
+                        <h4>Device Repair & Maintenance</h4>
+                        <p>From cracked screens to missing keys-batteries too!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Device Setup & Installation</h4>
+                        <p>Helping you set up new devices for seamless use.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Business Phone Solutions</h4>
+                        <p>Fast and seamless phone system solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <h4>Cybersecurity Solutions</h4>
+                        <p>Protect your devices and data from online threats.</p>
+                    </div>
                 </div>
             </div>
-            <hr>
-            <p class="text-center mb-0">&copy; 2025 BlueJay IT. All rights reserved.</p>
         </div>
-    </footer>
+    </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq text-center py-5 bg-light">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What services do you offer?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">We offer tech support, device setup, cybersecurity, and more.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials text-center">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p>"Great service! Fixed my laptop in no time!" - John D.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p>"Super helpful! My network is now faster than ever!" - Sarah L.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p>"Helped me last-minute in moving my IT infrastructure to a new location." - Michael F.</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 text-center">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" class="form-control mb-3" placeholder="Your Name">
+                <input type="email" class="form-control mb-3" placeholder="Your Email">
+                <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn-primary btn-cta">Send</button>
+            </form>
+        </div>
+    </section>
+
+        <!-- Footer Section -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p>Email: frontdesk@bluejayit.com</p>
+                        <p>Phone: (701) 969-7222</p>
+                        <p>Proudly serving the Fargo-Moorhead area and surrounding communities since 2021.</p>
+                    </div>
+    
+                    <!-- Quick Links -->
+                    <div class="col-md-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                            <li><a href="#faq" class="text-white text-decoration-none">FAQ</a></li>
+                            <li><a href="#testimonials" class="text-white text-decoration-none">Testimonials</a></li>
+                            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                            <li><a href="login.html" class="text-white text-decoration-none">Admin Login</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Social Media -->
+                    <div class="col-md-4">
+                        <h5>Follow Us</h5>
+                        <!-- <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i> Facebook</a><br>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i> Twitter</a><br> -->
+                        <a href="https://www.linkedin.com/company/bluejay-it" target="_blank" text-white me-2"><i class="bi bi-linkedin"></i> LinkedIn</a><br>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-center mb-0">&copy; 2025 BlueJay IT LLC. All rights reserved.</p>
+            </div>
+        </footer>
+    
     <!-- Smooth Scroll Script -->
     <script>
         document.querySelectorAll('a.nav-link').forEach(anchor => {
